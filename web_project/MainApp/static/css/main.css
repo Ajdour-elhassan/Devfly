@@ -1,0 +1,74 @@
+/*@font-face {
+
+    font-family:
+    src: url('../fonts/Allerta-Regular.ttf')  format("truetype"),
+        local('Allerta');
+}  */
+
+.navbar {
+   border-bottom : 3px solid #e7eff3 ;
+   background-color:  #0a2a47 ;
+}
+
+li:hover {
+    background-color: rgb(108, 169, 226);
+
+}
+li:active{
+    background-color: rgb(63, 63, 126);
+
+}
+
+
+body {
+
+    background-color : #f2f4f4  ;
+    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 600;
+}
+
+
+
+html,body {
+
+   direction: ltr ;
+   text-align: left ;
+}
+
+.image {
+    background-image: url('../images/d.jpg') ;
+    background-size: cover;
+    background-position: center center;
+    height: 450px ;
+}
+
+.title{
+    margin-top: 60px;
+    text-align: center ;
+    color:  #ffffff   ;
+}
+.myimg{
+
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin : 0 auto ;
+    padding-bottom: 10px;
+    
+}
+
+
+.gmi{
+    height: 200px;
+}
+
+.foot {
+    padding : 12px 12px 12px 0 ;
+    color: aliceblue;
+    background-color: #0a2a47 ;
+    margin-top: 5px ;
+
+}
+
+

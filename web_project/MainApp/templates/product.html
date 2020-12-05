@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+product
+{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row mb-5">
+     <div class="col-10 mx-auto col-md-6 my-5">
+        <img src="{{product.image.url}}" width="350" height="350" alt="">
+     </div>
+     <div class="col-10 mx-auto col-md-6 my-5">
+        <h3 class="product-title"> {{product.name}} </h3>
+           <h5 class="text-info font-italic  mb-2">
+            Price :  <span class="mr-0">$</span> {{product.price}}
+           </h5>
+        <h3 class="product-description"> Discription : </h3>
+        <p class="text-justify product-text">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Nisi temporibus ratione, harum rerum ex quibusdam fugiat
+          dignissimos animi reprehenderit dolorum neque, eum ea vel,
+          minima minus laboriosam velit corporis impedit?
+        </p>
+         {% if product.stock <= 0 %}
+        <p class="text-justify product-text"> Out of the stack </p>
+         {% else %}
+         <a href="{% url 'add_cart' product.id %}">
+         <p class="btn btn-success btn-active"> Add to Card  </p>
+         </a>
+         {% endif %}
+     </div>
+  </div>
+</div>
+<div class="col-10 mx-auto col-md-8 my-5">
+ <!-- ReviewForm -->
+ <div class="card">
+  <div class="card-header">
+    <h4>Reviews</h4>
+  </div>
+  {% if user.is_authenticated %}
+  <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <textarea name="content" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+      <button type="submit" class="btn btn-success">Post</button>
+      </div>
+    </form>
+  </div>
+  {% endif %}
+
+   {% if reviews.count > 0 %}
+  <ul class="list-group list-group-flush">
+       {% for review in reviews %}
+       <li class="list-group-item"><h5>{{review.user.username}}</h5>
+       <p class="card-text">{{review.content}}</p>
+       </li>
+       {% endfor %}
+ </ul>
+     {% endif %}
+</div>
+</div>
+
+</div>
+
+{% endblock content %}
