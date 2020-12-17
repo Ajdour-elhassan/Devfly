@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+   <!-- Page Header -->
+   <div class="card text-white bg-dark">
+    <img src="{{post.image.url}}" class="card-img" alt="background-image" style="height: 400px;">
+    <div class="card-img-overlay">
+      <br>
+      <br>
+      <div class=container>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+             <h1 class="card-title mr-3 ml-4 font-weight-bolder text-center text-title"> {{post.title}}</h1>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Page Header -->
+
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto bg-white">
+          <br>
+          <h3 class="card-title  text-center" style="font-family: 'Times New Roman', Times, serif">"{{post.title}} ..."</h3>
+          <br>
+          <p class="text-justfy font-weight-bold" style="font-family: 'Times New Roman', Times, serif">{{post.details|linebreaksbr}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
+          <h5 class="text-justify font-weight-bold">Do you find this tools Express your View in Feedback below!
+          </h5>
+          <br>
+          <div class="card-body">
+                  <div class="card-header bg-success text-center">
+                      Feedback
+                  </div>
+                  <form method="POST">
+                      {% csrf_token %}
+                      <div class="form-group">
+                          <textarea name="content" class="form-control" style="height:16rem"></textarea>
+                      </div>
+                      <div class="form-group">
+                      <button type="submit" name="button" class="btn btn-block btn-success">Comment</button>
+                      </div>
+                  </form>
+                  {% for feedback in feedbacks %}
+                  <ul class="list-group list-group-flush" >
+                      <li class="list-group-item"> {{ feedback.user.username}} : <p>{{feedback.content}}</p> </li>
+                      <hr>
+                  </ul>
+                  {% endfor %}
+              </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <br>
+{% endblock %}

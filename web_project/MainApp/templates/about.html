@@ -1,62 +1,89 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-5">
-<div class="row">
-  <div class="col-md-2">
-  <!--Empy column-->
-  </div>
-<div class="col-md-8">
-<div class="card  text-center" >
-  <div class="card-header bg-success">
-    About us :
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"> Hello , Dear Visitor!</h5>
-    <p class="card-text"> Welcome to Diesefive platform</p>
-     <p class="card-text">
-     Diesefive is the platform where you will find new updated information
-     about Digital marketing , business analysis, web development,and more things related to  these category list.
-     Our Significant purpose is to provide all tools and knowledge related to new updates
-     information to our visitors. we struggle everyday to deliver you the reliable
-     and update information of  marketing , business , and new technologies in the world.</p>
-     <p> if you would like to know more , Get connected with us on social media down blow : </p>
-     <div class="col-md-6 col-lg-8 text-center text-md-right">
-          <!-- Facebook -->
-          <a class="fb-ic" href="https://web.facebook.com/Diesefive-108255180913394/">
-            <i class="fab fa-facebook-f white-text mr-4" > </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic" href="https://www.instagram.com/Diesefive/">
-            <i class="fab fa-instagram white-text mr-4" > </i>
-          </a>
 
-         
-             <!-- Telegram -->
-           <a class="tw-ic" href="https://web.telegram.org/#/im?p=@diese5">
-            <i class="fab fa-telegram white-text mr-4"> </i>
-          </a>
-         
-          <!-- Google +-->
-        <a class="gplus-ic" href="https://www.youtube.com/channel/UCqDvKCHZD17a7O7WAQASTWw/featured?view_as=subscriber">
-          <i class="fab fa-youtube"></i>
-          </a>
+ <!-- Work -->
+ <section id="work-about" class=" text-white text-center">
+   <br>
+   <br>
+  <h4 class="display-4">We Work to complete Your Sevices </h4>
+  <h4> Build your brand or a website for company</h4>
+  <h4> Resgister for free Now!</h4>
+  <a href="listings.html" class="btn btn-secondary text-white btn-lg">Register</a>
+  <br>
+  <br>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-5 bg-secondary text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="fas fa-comment fa-4x mr-4"></i>
+          <hr>
+          <h3>Consulting Services</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
+            hic dignissimos ratione ea quae.</p>
         </div>
-    <a href="{% url 'home' %}" class="btn btn-lg btn-block btn-success mt-4 c text-center"> Back Home </a>
-  </div>
-  <div class="card-footer text-muted">
-   Diesefive.com
-  </div>
-</div>
- </div>
- 
-    <div class="col-md-2">
-      <!--Empy column-->
+        <div class="col-md-4">
+          <i class="fas fa-home fa-4x mr-4"></i>
+          <hr>
+          <h3>Propery Management</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
+            hic dignissimos ratione ea quae.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-suitcase fa-4x mr-4"></i>
+          <hr>
+          <h3>Renting & Selling</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
+            hic dignissimos ratione ea quae.</p>
+        </div>
+      </div>
     </div>
+</section>
 
-</div>
-</div>
+<!--Of Service -->
 
+<!-- Team -->
+<section id="team-about" class="py-5">
+  <div class="container">
+    <h2 class="text-center">Our Team</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="assets/img/realtors/kyle.jpg" alt="" class="rounded-circle mb-3">
+        <h4>Kyle Brown</h4>
+        <p class="text-success">
+          <i class="fas fa-award text-success mb-3"></i> Realtor</p>
+        <hr>
+        <p>
+          <i class="fas fa-phone"></i> (555)-555-5555</p>
+        <p>
+          <i class="fas fa-envelope-open"></i> kyle@btrealestate.co</p>
+      </div>
+      <div class="col-md-4">
+        <img src="assets/img/realtors/mark.jpg" alt="" class="rounded-circle mb-3">
+        <h4>Mark Hudson</h4>
+        <p class="text-success">Realtor</p>
+        <hr>
+        <p>
+          <i class="fas fa-phone"></i> (444)-444-4444</p>
+        <p>
+          <i class="fas fa-envelope-open"></i> mark@btrealestate.co</p>
+      </div>
 
+      <div class="col-md-4">
+        <img src="assets/img/realtors/jenny.jpg" alt="" class="rounded-circle mb-3">
+        <h4>Jenny Johnson</h4>
+        <p class="text-success">Realtor</p>
+        <hr>
+        <p>
+          <i class="fas fa-phone"></i> (333)-333-3333</p>
+        <p>
+          <i class="fas fa-envelope-open"></i> jenny@btrealestate.co</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 {% endblock content %}

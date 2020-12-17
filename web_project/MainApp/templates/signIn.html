@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Sign_in
+{% endblock title %}
+
+<!--Message_from-->
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} text-center">
+  {{message}}
+</div>
+{% endfor %}
+{% endif %}
+<!--End_Message_from-->
+
+{% block content %}
+<br>
+<br>
+<br>
+<div class="continer mt-5">
+  <div class="row">
+      <div class="col-9 col-sm-9 col-md-6 col-lg-4 mx-auto bg-dark" style="color:white">
+        <br>
+        <h4 class="text-center font-weight-bold"> Welcome to Diesefive </h4>
+        <br>
+        <h5 class="text-center font-weight-bold"> Sign in into your account! </h5>
+        <form method="POST">
+            {% csrf_token %}
+            <p>{{ form | crispy }}</p>
+          <button type="submit" name="button" class="btn btn-success btn-block"> Sing in</button>
+        </form>
+        <br>
+        <br>
+        <p class="text-center"> *If you don't have an account try to register! </p>
+        <p class="text-center"> *Create an Account for free in order to See your Dashboord! </p>
+        <br>
+        <a href="{% url 'sign_up' %}" class="btn btn-success btn-center"> Create New Account </a>
+        <br>
+        <br>
+  </div>
+</div>
+
+<br>
+<br>
+{% endblock content %}
+
+
+

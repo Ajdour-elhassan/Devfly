@@ -1,74 +1,75 @@
-/*@font-face {
+body {
+  background-color: #D8D8D8;
+ 
+}
+html {
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    font-family:
-    src: url('../fonts/Allerta-Regular.ttf')  format("truetype"),
-        local('Allerta');
-}  */
+.btn-secondary {
+  color: #fff !important; }
+
+img {
+  width: 100%; }
+
+.logo {
+  width: 80px; 
+}
 
 .navbar {
-   border-bottom : 3px solid #e7eff3 ;
-   background-color:  #0a2a47 ;
+  background-color: #28559a ;
+  opacity: 0.9;
+  text-transform: uppercase;
 }
-
-li:hover {
-    background-color: rgb(108, 169, 226);
-
-}
-li:active{
-    background-color: rgb(63, 63, 126);
-
+.sticky-top {
+  background-color: #0f2557 ;
 }
 
 
-body {
+#showcase-inner{
+    min-height: 100%;
+    width: 100%;
+    background: #4b9fe1 ;
+}
 
-    background-color : #f2f4f4  ;
-    /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-    font-family: 'Gill Sans', sans-serif;
-    font-weight: 600;
+.text-title {
+  color : white ;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
 
-html,body {
-
-   direction: ltr ;
-   text-align: left ;
+.top-bar {
+  background-color: #1a2238 ;
+  color : white;
+  
 }
 
-.image {
-    background-image: url('../images/d.jpg') ;
-    background-size: cover;
-    background-position: center center;
-    height: 450px ;
+#work-about {
+  background-color:  #4b9fe1 ;
 }
 
-.title{
-    margin-top: 60px;
-    text-align: center ;
-    color:  #ffffff   ;
-}
-.myimg{
-
-    width: 400px;
-    height: 400px;
-    display: block;
-    margin : 0 auto ;
-    padding-bottom: 10px;
-    
+#team-about {
+  background-color: #00458b ;
+  color : white;
 }
 
-
-.gmi{
-    height: 200px;
+#service-about {
+  background-color: white ; 
 }
 
-.foot {
-    padding : 12px 12px 12px 0 ;
-    color: aliceblue;
-    background-color: #0a2a47 ;
-    margin-top: 5px ;
-
+.main-footer {
+  background-color: #1a2238 ;
+  color : white;
 }
 
-
+.app-footer {
+  background: #0f2557;
+  color:white;
+  
+}
+.links.h5 {
+  text-decoration: none;
+  font-size: medium;
+  color :#4b9fe1 ;
+}

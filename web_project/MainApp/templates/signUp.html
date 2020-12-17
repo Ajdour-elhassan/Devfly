@@ -9,28 +9,28 @@
 
 
 
-<div class="max-auto">
+<div class="max-auto mt-4">
     <br>
     <br>
-    <h1 class="product-text text-center"> Create an Account </h1>
-    {% if not form.is_valid %}
-    <div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
-    <h1 class="product-text"> Fill out this form to Sign up </h1>
-    <form method="POST">
+    <br>
+      <div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-dark" style="color:white">
+        <br>
+        <h4 class="text-center font-weight-bold"> Create an Account Now! </h4>
+        <p class="text-cznter font-weight-bold"> Fill out this form to register! </p>
+       <form method="POST">
         {% csrf_token %}
          <p>{{ form | crispy }}</p>
          <br>
-         <button type="submit" name="button" class="btn btn-secondary"> SignUp </button>
-    </form >
-    </div>
-   {% else %}
-   <div class="container">
+         <button type="submit" name="button" class="btn btn-block btn-success"> SignUp </button>
+        </form >
         <br>
-        <div class="product-text text-center">
-            Your account has been successfully Created!
-        </div>
-   </div>
-   {% endif %}
+        <p class="text-center"> *If you have already an account click to <a href="{% url 'sign_in'%}"> Sign in </a></p>
+        <p class="text-center"> *Create an Account for free in order to See your Dashboord! </p>
+        <br>
+      </div>
 </div>
+
+<br>
+<br>
 
 {% endblock content %}

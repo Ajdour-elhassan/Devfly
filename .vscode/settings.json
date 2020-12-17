@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "venv\\Scripts\\python.exe"
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "vue3snippets.enable-compile-vue-file-on-did-save-code": true
 }

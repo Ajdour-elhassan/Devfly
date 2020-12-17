@@ -1,10 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}
-
 Home
-
 {% endblock %}
 
 
@@ -12,41 +9,24 @@ Home
 {% block content %}
 
 <!-- Background picture -->
-
-<section class="image"><div class="container">
-  <div class="row">
-     <div class="col-md-8">
-        <div class="title">
-          <div class="mt-4">
-             <h2>  Diesefive Platform </h2>
-             </div>
-            <div class="mt-1">
-              <h3> <i class="fas fa-check-circle" style="color: rgb(12, 228, 12)"></i> Discover Productive and Creative Tools  </h3>
-                </div>
-            <div class="mt-1">
-              <h3>  <i class="fas fa-check-circle" style="color: rgb(12, 228, 12)"></i> Stay connected to the world of Innovation , and new technology   </h3>
-            </div>
-              <div class="mt-3">
-                  <h4>  <i class="fas fa-check-circle" style="color: rgb(12, 228, 12)"></i>  Sign Up And Get Started </h4>
-              </div>
-           <div class="m mt-4">
-           <a class="btn" style="color:white; background-color:#2e86c1;" href=""> <h4 class="btt"> Join for free </h4></a>
-        </div>
-        </div>
+<section id="showcase-inner" class="py-5 text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h3 class="display-4"> Welcome to Diesefavourite </h3>
+        <h5 class="lead"> We offer to you verious service and materials </h5>
+        <h5 class="lead"> Register Now!</h5>
       </div>
-    <div class="col-md-4">
+    </div>
   </div>
-</div>
-</div>
 </section>
-<br><br>
 <!-- End_Of_Background picture -->
 <!-- Tile -->
 <div class="py-4">
   <div class="container">
     <div class="row">
       <div class="col-10 text-center">
-        <h4 class="text-capitalize font-weight-bold"> All products </h4>
+        <h4 class="text-capitalize font-weight-bold"> Show you latest Posts! Discover Nowtest Things </h4>
       </div>
     </div>
   </div>
@@ -54,9 +34,37 @@ Home
 <!-- the end of Tile -->
 
 <!-- listing Post -->
-
-
-
+<section>
+  <div class="container text-center ">
+    <div class="row  mt-5">
+      {% for post in posts %}
+      <div class="col-9 max-auto col-md-6 col-lg-3">
+        <div class="card mb-4" style="border-color: slategrey">
+          <div class="p-4">
+          <a href="{{post.get_url}}">
+            <img src="{{post.image.url}}"  class="card-img-top" alr="" style="width: 220px; height:220px">
+          </a>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+              <p class="font-weight-bold">
+                {{post.title}}
+              </p>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <a class="btn btn-block btn-success btn-active" style="color:white;" href="{{post.get_url}}">
+                more info </a>
+        </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <!--End of the listing -->
 
+<!--Paginator-->
+       {% include './partials/paginator.html' %}
+<!-- End foPaginator-->
+
+<br>
 {% endblock %}
