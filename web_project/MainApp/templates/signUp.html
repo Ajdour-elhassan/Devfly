@@ -15,16 +15,16 @@
     <br>
       <div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-dark" style="color:white">
         <br>
-        <h4 class="text-center font-weight-bold"> Create an Account Now! </h4>
-        <p class="text-cznter font-weight-bold"> Fill out this form to register! </p>
+        <h4 class="text-center font-weight-bold"> Create an Account for free! </h4>
+        <p class="text-cznter font-weight-bold"> Fill out this form to register </p>
        <form method="POST">
         {% csrf_token %}
          <p>{{ form | crispy }}</p>
          <br>
          <button type="submit" name="button" class="btn btn-block btn-success"> SignUp </button>
-        </form >
+        </form>
         <br>
-        <p class="text-center"> *If you have already an account click to <a href="{% url 'sign_in'%}"> Sign in </a></p>
+        <p class="text-center"> *If you have already an account click here to <a href="{% url 'sign_in'%}"> Sign in </a></p>
         <p class="text-center"> *Create an Account for free in order to See your Dashboord! </p>
         <br>
       </div>

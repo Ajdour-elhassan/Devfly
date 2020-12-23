@@ -1,8 +1,9 @@
 from django.shortcuts import render , get_object_or_404 , redirect
 from .models import Category , Post , Feedback
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.conf import settings
 from django.contrib.auth.models import Group , User
-from .forms import SignUpForm
+from .forms import SignUpForm , ContactForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate , logout 
@@ -16,31 +17,36 @@ def home(request , category_slug=None):
         posts = Post.objects.filter(Category=category_page)
     else :
         posts = Post.objects.all()
+        
+    # Panginator
+    page = request.GET.get('page')
+    paginator = Paginator(posts , 4) #Show 10  Items_pages in posts()
+    try :
+        page_obj = paginator.page(page)
+    except PageNotAnInteger :
+        page_obj = paginator.page(1)
+    except EmptyPage :
+        page_obj = paginator.page(paginator.num_pages)
     
-    #paginator = Paginator(posts, 4)
-    #try :
-    #    page = int(request.GET.get('page, 1'))
-    #except :
-    #   page = 1
-    #try :
-    #    posts = paginator.page(page)
-    #except (EmptyPage , InvalidPage) :
-    #    posts = paginator.page(paginator.num_pages)
-
-    return render(request , 'home.html' , {'Category':category_page , 'posts':posts} )
+    return render(request , 'home.html' , {'Category': category_page , 'page_obj' : page_obj  } )
 
 def details_page (request , category_slug , post_slug) :
     try :
         post = Post.objects.get(Category__slug=category_slug , slug=post_slug)
     except Exception as e :
-        raise e 
+        raise e
+    
+    #if request.method == "POST" and request.POST['content'].strip() != ''  :
+        #messages.success(request('Sign up in order to comment!'))
+        #return redirect('sign_up')
+    
     if request.method == "POST" and request.user.is_authenticated and request.POST['content'].strip() != '' :
 
-        Feedback.objects.create(post=post , 
-                                user=request.user , 
+        Feedback.objects.create(post=post ,
+                               user=request.user ,
                                 content=request.POST['content'])
-    feedbacks = Feedback.objects.filter(post=post) 
-  
+    feedbacks = Feedback.objects.filter(post=post)
+
     return render(request , 'detail_page.html' , {'post':post , 'feedbacks' : feedbacks })
 
 
@@ -54,7 +60,7 @@ def sign_up(request) :
             signUp_user = User.objects.get(username=username)
             customer_group = Group.objects.get(name='registered_users')
             customer_group.user_set.add(signUp_user)
-            messages.success(request,('your account created suceesfully'))
+            messages.success(request,('your account has created successfully'))
             return redirect('sign_in')
     else :
         form = SignUpForm()
@@ -94,5 +100,14 @@ def search(request) :
     return render(request, 'home.html' , {'posts':posts})
 
 def contact(request) :
-    return render(request , 'contact.html')
+    if request.method == "POST" :
+        form = ContactForm(request.POST)
+        if form.is_valid() :
+            form.save()
+            messages.success(request,('your message has submitted successfully'))
+            return redirect ('home')
+    else :
+        form = ContactForm()
+        
+    return render(request , 'contact.html' , {'form':form})
 

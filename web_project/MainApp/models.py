@@ -3,7 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 # Create your models here.
-
 class Category(models.Model) :
     name = models.CharField(max_length=250 , unique=True)
     slug = models.SlugField(max_length=250 , unique=True)
@@ -47,6 +46,14 @@ class Feedback(models.Model) :
         return self.content 
 
 
+class Contact(models.Model) :
+    name = models.CharField(max_length=250)
+    email = models.EmailField()
+    subject = models.CharField(max_length=400)
+    message = models.TextField()
+    
+    def __str__(self) :
+        return self.name
 
 
 

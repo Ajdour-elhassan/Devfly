@@ -17,14 +17,20 @@ img {
 }
 
 .navbar {
-  background-color: #28559a ;
+  background-color: #0b4141 ;
   opacity: 0.9;
   text-transform: uppercase;
 }
 .sticky-top {
-  background-color: #0f2557 ;
+  background-color : #0b4141 ;
 }
 
+.btnn {
+  color: #fff;
+  background-color: #dc3545;
+  border-radius: 35px;
+  border: 1px solid rgba(220, 53, 69, 0.75);
+}
 
 #showcase-inner{
     min-height: 100%;
@@ -49,8 +55,9 @@ img {
   background-color:  #4b9fe1 ;
 }
 
+
 #team-about {
-  background-color: #00458b ;
+  background-color:  #051622; 
   color : white;
 }
 
@@ -59,12 +66,12 @@ img {
 }
 
 .main-footer {
-  background-color: #1a2238 ;
+  background-color: #0b4141 ;
   color : white;
 }
 
 .app-footer {
-  background: #0f2557;
+  background: #162b32 ;
   color:white;
   
 }
@@ -72,4 +79,8 @@ img {
   text-decoration: none;
   font-size: medium;
   color :#4b9fe1 ;
+}
+
+#services {
+  background-color: #1a2238 ;
 }

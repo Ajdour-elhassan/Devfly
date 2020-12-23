@@ -5,7 +5,7 @@
 
    <!-- Page Header -->
    <div class="card text-white bg-dark">
-    <img src="{{post.image.url}}" class="card-img" alt="background-image" style="height: 400px;">
+    <img src="{% static '/images/backimage.jpg' %}" class="card-img" alt="background-image" style="height: 400px;">
     <div class="card-img-overlay">
       <br>
       <br>
@@ -14,7 +14,9 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8">
-             <h1 class="card-title mr-3 ml-4 font-weight-bolder text-center text-title"> {{post.title}}</h1>
+              <br>
+              <br>
+             <h2 class="card-title mr-3 ml-4 font-weight-bold" style="font-family: 'Comic Sans MS', Times, serif"> {{post.title}}</h2>
             </div>
             <div class="col-md-2">
             </div>
@@ -31,11 +33,12 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto bg-white">
           <br>
-          <h3 class="card-title  text-center" style="font-family: 'Times New Roman', Times, serif">"{{post.title}} ..."</h3>
+          <h3 class="card-title  text-center" style="font-family: 'Comic Sans MS', Times, serif"><i class="fas fa-newspaper"> </i> {{post.title}} . </h3>
           <br>
-          <p class="text-justfy font-weight-bold" style="font-family: 'Times New Roman', Times, serif">{{post.details|linebreaksbr}}</p>
+          <p class="text-justfy font-weight-bold" style="font-family: 'Arial', Times, serif">{{post.details|linebreaksbr}}</p>
           <p class="card-text"><small class="text-muted">Last updated 1 hour ago </small></p>
-          <h5 class="text-justify font-weight-bold">Do you find this tools Express your View in Feedback below!
+          <h5 class="text-justify font-weight-bold">
+            <i class="fas fa-edit"></i> Do you find this Article Useful? write your comment below!
           </h5>
           <br>
           <div class="card-body">
@@ -53,7 +56,8 @@
                   </form>
                   {% for feedback in feedbacks %}
                   <ul class="list-group list-group-flush" >
-                      <li class="list-group-item"> {{ feedback.user.username}} : <p>{{feedback.content}}</p> </li>
+                      <li class="list-group-item"> <h5></i> <i class="fas fa-user"></i> {{ feedback.user.username}} : </h5>
+                        <h5> <i class="fas fa-comment"></i> " {{feedback.content}} "  </h5> </li>
                       <hr>
                   </ul>
                   {% endfor %}

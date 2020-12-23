@@ -1,42 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
- <!-- Work -->
- <section id="work-about" class=" text-white text-center">
-   <br>
-   <br>
-  <h4 class="display-4">We Work to complete Your Sevices </h4>
-  <h4> Build your brand or a website for company</h4>
-  <h4> Resgister for free Now!</h4>
-  <a href="listings.html" class="btn btn-secondary text-white btn-lg">Register</a>
-  <br>
-  <br>
-</section>
 
-<!-- Services -->
-<section id="services" class="py-5 bg-secondary text-white">
+
+<!-- Background picture -->
+<div class="card text-white bg-dark">
+  <img src="{% static '/images/backimage.jpg' %}" class="card-img" alt="background-image" style="height: 400px;">
+  <div class="card-img-overlay">
+    <br>
+    <br>
+    <div class=container>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h3 class="display-4"> Our Services </h3>
+          <h5 class="lead"> We provide many services to our customers </h5>
+          <h5 class="lead"> Register Now!</h5>
+          <a class="btn text-white btn-active bg-danger btnn" href="{% url 'sign_up' %}" ><h5> Sign up </h5></a><a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End_Of_Background picture -->
+
+<section id="services" class="py-5  text-white" style="font-family: 'Times New Roman', Times, serif">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-4">
-          <i class="fas fa-comment fa-4x mr-4"></i>
-          <hr>
-          <h3>Consulting Services</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
+        <i class="fas fa-laptop-code fa-4x mr-4"></i>
+        <hr>
+        <h3> Build A Website</h3>
+        <p> " Build a Modern Website or any Web Application for your Business or service with
+          Awesome User Interface and User Experience (UI/UX)  " </p>
         </div>
         <div class="col-md-4">
-          <i class="fas fa-home fa-4x mr-4"></i>
+          <i class="fas fa-clipboard-check fa-4x mr-4"></i>
           <hr>
-          <h3>Propery Management</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
+          <h3>  Course and Tutorials </h3>
+          <p> " We provide Tutorials and Course related to Coding especially web development "  </p>
         </div>
         <div class="col-md-4">
-          <i class="fas fa-suitcase fa-4x mr-4"></i>
+          <i class="fas fa-edit fa-4x mr-4"></i>
           <hr>
-          <h3>Renting & Selling</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
+          <h3> Create A Review </h3>
+          <p> "if you're looking for Writing a Marketing Review for your product or service ?
+            You're in the right place , we provide our customer with a professional Review "  </p>
         </div>
       </div>
     </div>
@@ -47,39 +56,31 @@
 <!-- Team -->
 <section id="team-about" class="py-5">
   <div class="container">
-    <h2 class="text-center">Our Team</h2>
+    <h3 class="text-center"> Our Team </h3>
+    <br>
     <div class="row text-center">
       <div class="col-md-4">
-        <img src="assets/img/realtors/kyle.jpg" alt="" class="rounded-circle mb-3">
-        <h4>Kyle Brown</h4>
+        <img src="{% static '/images/hassan.png' %}" alt="" class="rounded-circle mb-3" style="height: 150px; width:150px">
+        <h4>Hassan Ajdour</h4>
         <p class="text-success">
-          <i class="fas fa-award text-success mb-3"></i> Realtor</p>
+          <i class=" text-success mb-3"></i> Software Developer & The Founder Of Diesefly Platform </p>
         <hr>
-        <p>
-          <i class="fas fa-phone"></i> (555)-555-5555</p>
-        <p>
-          <i class="fas fa-envelope-open"></i> kyle@btrealestate.co</p>
+        <i class="fas fa-envelope-open"></i> Diesefont_Py@gmail.com </p>
       </div>
       <div class="col-md-4">
-        <img src="assets/img/realtors/mark.jpg" alt="" class="rounded-circle mb-3">
-        <h4>Mark Hudson</h4>
-        <p class="text-success">Realtor</p>
+        <img src="{% static '/images/hassan.png' %}" alt="" class="rounded-circle mb-3" style="height: 150px; width:150px">
+        <h4>Anna Smith</h4>
+        <p class="text-success"> Web Designer & Graphic Designer </p>
         <hr>
-        <p>
-          <i class="fas fa-phone"></i> (444)-444-4444</p>
-        <p>
-          <i class="fas fa-envelope-open"></i> mark@btrealestate.co</p>
+          <i class="fas fa-envelope-open"></i> Diesefont_Py@gmail.com </p>
       </div>
 
       <div class="col-md-4">
-        <img src="assets/img/realtors/jenny.jpg" alt="" class="rounded-circle mb-3">
+        <img src="{% static '/images/hassan.png' %}" alt="" class="rounded-circle mb-3" style="height: 150px; width:150px">
         <h4>Jenny Johnson</h4>
-        <p class="text-success">Realtor</p>
+        <p class="text-success">Web Developer & SEO Writer </p>
         <hr>
-        <p>
-          <i class="fas fa-phone"></i> (333)-333-3333</p>
-        <p>
-          <i class="fas fa-envelope-open"></i> jenny@btrealestate.co</p>
+          <i class="fas fa-envelope-open"></i> Diesefont_Py@gmail.com </p>
       </div>
     </div>
   </div>
