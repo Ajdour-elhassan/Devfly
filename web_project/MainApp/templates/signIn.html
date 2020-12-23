@@ -8,8 +8,8 @@
 <!--Message_from-->
 {% if messages %}
 {% for message in messages %}
-<div class="alert alert-{{message.tags}} text-center">
-  {{message}}
+<div class="alert alert-{{messages.tags}} text-center">
+  {{ message }}
 </div>
 {% endfor %}
 {% endif %}
@@ -23,12 +23,11 @@
   <div class="row">
       <div class="col-9 col-sm-9 col-md-6 col-lg-4 mx-auto bg-dark" style="color:white">
         <br>
-        <h3 class="text-center font-weight-bold"> Welcome to Devfly </h3>
-        <h5 class="text-center font-weight-bold"> Sign in into your account! </h5>
+        <h3 class="text-center font-weight-bold"> Log in to your account </h3>
         <form method="POST">
             {% csrf_token %}
             <p>{{ form | crispy }}</p>
-          <button type="submit" name="button" class="btn btn-success btn-block"> Sing in</button>
+          <button type="submit" name="button" class="btn btn-success btn-block"> Sign in </button>
         </form>
         <br>
         <br>

@@ -13,10 +13,7 @@
             <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item active mr-3">
-            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-          </li>
-          <li class="nav-item active mr-3">
-            <a class="nav-link" href="{% url 'about' %}">Service</a>
+            <a class="nav-link" href="{% url 'about' %}">Services</a>
           </li>
           <li class="nav-item dropdown"><a class="nav-link active text-light text-uppercase  px-3 dropdown-toggle" data-toggle="dropdown"  href=""> Blogs </a>
             <div class="dropdown-menu bg-primary">
@@ -25,6 +22,9 @@
               <a class="dropdown-item" href="{{category.get_url}}">{{category.name}}</a>
                   {% endfor %}
             </div>
+          </li>
+          <li class="nav-item active mr-3">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
         </ul>
         {% if user.is_authenticated %}
