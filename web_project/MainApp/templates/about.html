@@ -1,53 +1,61 @@
-{% extends 'base.html' %}
-{% block content %}
-{% load static %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 
 
 <!-- Background picture -->
 <div class="card text-white bg-dark">
-  <img src="{% static '/images/backimage.jpg' %}" class="card-img" alt="background-image" style="height: 400px;">
-  <div class="card-img-overlay">
-    <br>
-    <br>
-    <div class=container>
-      <div class="row text-center">
-        <div class="col-md-12">
-          <h3 class="display-4"> Our Services </h3>
-          <h5 class="lead"> We provide many services to our customers </h5>
-          <h5 class="lead"> Register Now!</h5>
-          <a class="btn text-white btn-active bg-danger btnn" href="{% url 'sign_up' %}" ><h5> Sign up </h5></a><a>
+    <img src="{% static '/images/backimage.jpg' %}" class="card-img" alt="background-image" style="height: 400px;">
+    <div class="card-img-overlay">
+        <br>
+        <br>
+        <div class=container>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    {% if user.is_authenticated %}
+                    <h3 class="display-4"> Our Services </h3>
+                    <h5 class="lead"> Our platform offers many useful services and materials </h5>
+                    <h5 class="lead"> would you lik to know more!</h5>
+                    <h5 class="lead"> Contact us!</h5>
+                    <a class="btn text-white btn-active bg-danger btnn" href="{% url 'contact' %}">
+                        <h5> Contact </h5>
+                    </a>
+                    {% else %}
+                    <h3 class="display-4"> Our Services </h3>
+                    <h5 class="lead"> Our platform offers many useful services and materials to you </h5>
+                    <h5 class="lead"> Register Now!</h5>
+                    <a class="btn text-white btn-active bg-danger btnn" href="{% url 'sign_up' %}">
+                        <h5> Sign up </h5>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 <!-- End_Of_Background picture -->
 
 <section id="services" class="py-5  text-white" style="font-family: 'Times New Roman', Times, serif">
     <div class="container">
-      <div class="row text-center">
-        <div class="col-md-4">
-        <i class="fas fa-laptop-code fa-4x mr-4"></i>
-        <hr>
-        <h3> Build A Website</h3>
-        <p> " Build a Modern Website or any Web Application for your Business or service with
-          Awesome User Interface and User Experience (UI/UX)  " </p>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i class="fas fa-laptop-code fa-4x mr-4"></i>
+                <hr>
+                <h3> Build A Website</h3>
+                <p> " Build a Modern Website or any Web Application for your Business or service with Awesome User Interface and User Experience (UI/UX) " </p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-clipboard-check fa-4x mr-4"></i>
+                <hr>
+                <h3> Course and Tutorials </h3>
+                <p> " We provide Tutorials and Course related to Coding especially web development " </p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-edit fa-4x mr-4"></i>
+                <hr>
+                <h3> Create A Review </h3>
+                <p> "if you're looking for Writing a Marketing Review for your product or service ? You're in the right place , we provide our customer with a professional Marketing Review " </p>
+            </div>
         </div>
-        <div class="col-md-4">
-          <i class="fas fa-clipboard-check fa-4x mr-4"></i>
-          <hr>
-          <h3>  Course and Tutorials </h3>
-          <p> " We provide Tutorials and Course related to Coding especially web development "  </p>
-        </div>
-        <div class="col-md-4">
-          <i class="fas fa-edit fa-4x mr-4"></i>
-          <hr>
-          <h3> Create A Review </h3>
-          <p> "if you're looking for Writing a Marketing Review for your product or service ?
-            You're in the right place , we provide our customer with a professional Marketing Review "  </p>
-        </div>
-      </div>
     </div>
 </section>
 
@@ -55,20 +63,20 @@
 
 <!-- Team -->
 <section id="team-about" class="py-5">
-  <div class="container">
-    <h3 class="text-center"> A little bit About me! </h3>
-    <br>
-    <div class="row text-center">
-      <div class="col-md-12">
-        <img src="{% static '/images/hassan.png' %}" alt="" class="rounded-circle mb-3" style="height: 200px; width:200px">
-        <h4>AJDOUR HASSAN</h4>
-        <p class="text-success">
-          <i class=" text-success mb-3"></i> Software Developer , Blogger & Seo Writer . </p>
-        <hr>
-        <i class="fas fa-envelope-open"></i> devflypy2096@gmail.com  </p>
-      </div>
+    <div class="container">
+        <h3 class="text-center"> A little bit About me! </h3>
+        <br>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <img src="{% static '/images/hassan.png' %}" alt="" class="rounded-circle mb-3" style="height: 200px; width:200px">
+                <h4>AJDOUR HASSAN</h4>
+                <p class="text-success">
+                    <i class=" text-success mb-3"></i> Software Developer , Blogger & Seo Writer . </p>
+                <hr>
+                <i class="fas fa-envelope-open"></i> devflypy2096@gmail.com </p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 
